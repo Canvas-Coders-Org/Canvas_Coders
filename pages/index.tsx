@@ -10,6 +10,7 @@ const Home: NextPage = () => {
                 <title>CANVAS CODERS</title>
                 <meta name="description" content="Canvas Coders Educational Coding and Art Platform" />
                 <link rel="icon" href="/favicon.ico" />
+                <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
             </Head>
 
             <header className="fixed top-0 left-0 right-0 z-50">
@@ -24,12 +25,12 @@ const Home: NextPage = () => {
 
             <main className="flex-grow p-8 text-center">
                 <div className="max-w-screen-lg mx-auto">
-                    <h1 className="pb-8 text-4xl font-bold" style={{ fontFamily: "Anton", color: "white", fontSize: "500%" }}>CANVAS CODERS</h1>
+                    <h1 className="pb-8 text-4xl font-bold" style={{ fontFamily: "Anton", color: "white", fontSize: "800%" }}>CANVAS CODERS</h1>
                     <p className="mt-8 text-lg font-bold" style={{ color: "#FFDE59", fontSize: "200%" }}>
                         <strong>Unleash Your Creativity through Code</strong>
                     </p>
                     <div className="mt-8">
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        <button style={{ backgroundColor: "#ccb49c", color: "white", fontWeight: "bold", padding: "0.5em 1em", borderRadius: "0.25em", cursor: "pointer" }}>
                             Sign Up
                         </button>
                     </div>
