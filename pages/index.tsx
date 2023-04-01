@@ -34,7 +34,39 @@ const Home: NextPage = () => {
                 </div>
             </main>
 
-            <iframe src="https://codepen-app.vercel.app/codepen" style={{ width: "100%", height: "calc(100vh - 100px)", border: "none" }} />
+            <div className="iframe-wrapper" style={{ paddingBottom: "56.25%", position: "relative" }}>
+                <iframe src="https://codepen-app.vercel.app/codepen" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }} />
+            </div>
+
+            <section className="py-16 bg-gray-100 text-center">
+                <div className="max-w-screen-lg mx-auto">
+                    <h2 className="text-4xl font-bold mb-8">Available Projects</h2>
+                    <div className="flex justify-center">
+                        <div className="flex flex-col items-center mr-4">
+                            <div className="w-80 h-80 relative">
+                                <img src="https://media.giphy.com/media/3o72F8803duCphcbMA/giphy.gif" alt="Gallery Image 1" className="rounded-lg w-full h-full object-cover" />
+                            </div>
+                            <p className="text-lg font-bold mt-4">Project 1</p>
+                            <button className="bg-C8B49F hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Project</button>
+                        </div>
+                        <div className="flex flex-col items-center ml-4">
+                            <div className="w-80 h-80 relative">
+                                <img src="https://media.giphy.com/media/c8ygOpL64UDuw/giphy.gif" alt="Gallery Image 2" className="rounded-lg w-full h-full object-cover" />
+                            </div>
+                            <p className="text-lg font-bold mt-4">Project 2</p>
+                            <button className="bg-C8B49F hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Project</button>
+                        </div>
+                        <div className="flex flex-col items-center mx-4">
+                            <div className="w-80 h-80 relative">
+                                <img src="https://media.giphy.com/media/WBhHWsSZVti0M/giphy.gif" alt="Gallery Image 3" className="rounded-lg w-full h-full object-cover" />
+                            </div>
+                            <p className="text-lg font-bold mt-4">Project 3</p>
+                            <button className="bg-C8B49F hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-2">View Project</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
 
             <footer className="p-4">
                 <div className="max-w-screen-lg mx-auto">
