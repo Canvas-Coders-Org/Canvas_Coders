@@ -6,6 +6,7 @@ export default function Document() {
     <Html>
       <Head>
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
       </Head>
       <body>
         <Main />

@@ -10,12 +10,14 @@ const Home: NextPage = () => {
                 <title>CANVAS CODERS</title>
                 <meta name="description" content="Canvas Coders Educational Coding and Art Platform" />
                 <link rel="icon" href="/favicon.ico" />
-                <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet" />
             </Head>
 
             <header className="fixed top-0 left-0 right-0 z-50">
                 <nav className="flex items-center justify-between p-4 shadow-md bg-white">
                     <Web3Address />
+                    <Link href="/demo">
+                        <a className="text-lg font-light rounded-2xl">Launch App</a>
+                    </Link>
                     <Link href="/about">
                         <a className="text-lg font-light">About</a>
                     </Link>
