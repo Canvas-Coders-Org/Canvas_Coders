@@ -14,12 +14,15 @@ const Home: NextPage = () => {
 
             <header className="fixed top-0 left-0 right-0 z-50">
                 <nav className="flex items-center justify-between p-4 shadow-md bg-white">
-                    <Web3Address />
-                    <Link href="/">
-                        <a className="text-lg font-light">Home</a>
-                    </Link>
-                    <Web3Button />
-                </nav>
+                     <Web3Address />
+                     <Link href="/demo">
+                         <a className="text-lg font-light rounded-2xl">Launch App</a>
+                     </Link>
+                     <Link href="/about">
+                         <a className="text-lg font-light">About</a>
+                     </Link>
+                     <Web3Button />
+                 </nav>
             </header>
 
             <section className="py-16 bg-gray-100 text-center">
