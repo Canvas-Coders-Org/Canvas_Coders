@@ -70,9 +70,13 @@ const Home: NextPage = () => {
                     <h2 className="text-4xl font-bold mb-8 text-black">Experience our Platform</h2>
                     <p className="text-xl font-light mb-16 text-black font-bold">Try it out!</p>
                     <div className="mt-8">
-                        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" style={{ backgroundColor: "#ccb49c", fontSize: "200%" }}>
-                            Demo Now
-                        </button>
+                        <Link href="/demo">
+                            <a className="text-lg font-light">
+                                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" style={{ backgroundColor: "#ccb49c", fontSize: "200%" }}>
+                                    Demo Now
+                                </button>
+                            </a>
+                        </Link>
                     </div>
                 </div>
             </section>
