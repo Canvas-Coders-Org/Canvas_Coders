@@ -25,12 +25,15 @@ const DemoPage: NextPage = () => {
             <section className="py-16 bg-gray-100 text-center">
                 <div className="max-w-screen-lg mx-auto">
                     <h2 className="text-4xl font-bold mb-8">Collaborative Editor with Codesandbox</h2>
-                    <p className="text-xl font-light mb-16">Code together here</p>
+                    <p className="text-xl font-light mb-16">Code together here. Based on
+                        <a href="https://wiki.invisible.college">https://wiki.invisible.college</a> and <a href="https://braid.news">Braidjs</a>.
+                    </p>
+
                     <iframe
                         style={{height: '1000px', width: '100%'}}
                         //onLoad={() => {}}
                         //ref={this.iframeRef}
-                        src="https://codesandbox.io/s/j3pmomqpr9?file=/src/index.js:2785-3171"
+                        src="/editor.html"
                         title="Collaborative Editor"
                 />
                 </div>
