@@ -26,6 +26,7 @@ footer {
 
 /* Set background color of body */
 body {
+  padding-top: 80px;
   background-color: #f3f3f3;
 }
 
