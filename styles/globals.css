@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Set height of body and html to full height */
+html, body {
+  height: 100%;
+}
+
+/* Fix position of header and footer */
+header,
+footer {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  z-index: 50;
+}
+
+header {
+  top: 0;
+}
+
+footer {
+  bottom: 0;
+}
+
+/* Set background color of body */
+body {
+  background-color: #f3f3f3;
+}
+
+/* Center main content */
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style main content */
+main h1 {
+  color: #292929;
+}
+
+main p {
+  max-width: 30rem;
+  margin-left: auto;
+  margin-right: auto;
+  color: #707070;
+}
+
+main button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Style footer */
+footer {
+  background-color: #fff;
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer p {
+  color: #707070;
+  text-align: center;
+}
