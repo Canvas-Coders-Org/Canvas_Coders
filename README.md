@@ -28,7 +28,7 @@ BlockFuse leveraged the following technologies:
 * checkly for QA
 
 ## SUBMISSION DETAILS
-* [Video Demo]()
+* [Video Demo](https://www.youtube.com/watch?v=oVL6sk8FROA)
 * [Pitch Deck]()
 * [Devpost](https://devpost.com/software/canvas-coders-unleash-your-creativity-through-art-and-code)
 
