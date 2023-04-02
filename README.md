@@ -8,9 +8,10 @@ Canvas Coders is an interactive educational platform that is transforming the le
 ## TECH STACK
 BlockFuse leveraged the following technologies:
 * Owl Protocol
+* Polygon
+* IPFS
 * nextjs
 * solidity
-* Polygon
 * bash
 * codeandbox
 * css
