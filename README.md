@@ -25,3 +25,8 @@ BlockFuse leveraged the following technologies:
 * shell
 * typescript
 * vercel
+
+## Submission Details
+* [Video Demo]()
+* [Pitch Deck]()
+* [Devpost](https://devpost.com/software/canvas-coders-unleash-your-creativity-through-art-and-code)
