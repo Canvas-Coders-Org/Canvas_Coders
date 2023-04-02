@@ -34,7 +34,7 @@ BlockFuse leveraged the following technologies:
 
 ## NFT DEMO
 ![Canvas_Coders_Gifs](https://user-images.githubusercontent.com/100870737/229333619-4e163e72-496f-450b-9982-b0dc8d586a09.gif)
-### Displayed NFT: Tech Tyro
+### Displayed NFT: Tech Tyro (For Beginners on the Dev Track)
 
 ## NFT CATEGORIES
 * Creative Track
