@@ -32,6 +32,11 @@ BlockFuse leveraged the following technologies:
 * [Devpost](https://devpost.com/software/canvas-coders-unleash-your-creativity-through-art-and-code)
 
 
+## NFT DEMO
+https://user-images.githubusercontent.com/100870737/229333359-f07663a8-263b-4c2a-b81e-645f4b66eacd.mp4
+
+
+
 ## NFT DEPLOYMENT DETAILS
 * https://discord.com/channels/@me/1091421894143660162/1091939913991204956
 * https://discord.com/channels/@me/1091421894143660162/1091940063014821998
