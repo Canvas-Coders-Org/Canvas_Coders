@@ -50,7 +50,7 @@ BlockFuse leveraged the following technologies:
 ### `npm start`
 
 
-# NEXT STEPS & UPDATES
+## NEXT STEPS & UPDATES
 Continue to build with Owl Protocol and Explore Integrations with Other Web 3 Tools, Such as Lit Protcol for Gated Content Based On NFTs Held By Users
 
 
