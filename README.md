@@ -32,6 +32,24 @@ BlockFuse leveraged the following technologies:
 * [Devpost](https://devpost.com/software/canvas-coders-unleash-your-creativity-through-art-and-code)
 
 
+## NFT DEPLOYMENT DETAILS
+* https://discord.com/channels/@me/1091421894143660162/1091939913991204956
+* https://discord.com/channels/@me/1091421894143660162/1091940063014821998
+* https://discord.com/channels/@me/1091421894143660162/1091940197240934450
+* https://discord.com/channels/@me/1091421894143660162/1091940340044398663
+* https://mumbai.polygonscan.com/address/0xcd2ada00c48a27faa5cc67f9a1ed55b89ddf7f77
+* https://discord.com/channels/@me/1091421894143660162/1091940533540225186
+
+
+## DEVELOPER INSTRUCTIONS FOR "Canvas_Coders_Repo"
+
+### `npm install`
+
+### `npm build`
+
+### `npm start`
+
+
 # NEXT STEPS & UPDATES
 Continue to build with Owl Protocol and Explore Integrations with Other Web 3 Tools, Such as Lit Protcol for Gated Content Based On NFTs Held By Users
 
