@@ -13,7 +13,7 @@ const Home: NextPage = () => {
             </Head>
 
             <header className="fixed top-0 left-0 right-0 z-50">
-                <nav className="flex items-center justify-between p-4 shadow-md bg-white">
+                <nav className="flex items-center justify-between p-4 shadow-md">
                      <Web3Address />
                      <Link href="/demo">
                          <a className="text-lg font-light rounded-2xl">Launch App</a>
@@ -25,20 +25,31 @@ const Home: NextPage = () => {
                  </nav>
             </header>
 
-            <section className="py-16 bg-gray-100 text-center">
+            <section className="py-16 text-center hero-blur">
                 <div className="max-w-screen-lg mx-auto">
                     <h2 className="text-4xl font-bold mb-8">Collaborative Editor with Codesandbox</h2>
                     <p className="text-xl font-light mb-16">Code together here. Based on &nbsp;
                         <a href="https://wiki.invisible.college">https://wiki.invisible.college</a> and <a href="https://braid.news">Braidjs</a>.
                     </p>
 
-                    <iframe
-                        style={{height: '1000px', width: '100%'}}
-                        //onLoad={() => {}}
-                        //ref={this.iframeRef}
-                        src="/editor.html"
-                        title="Collaborative Editor"
-                />
+                    <div id="editorContainer">
+                        <iframe
+                            id="editorFrame"
+                            style={{height: '1000px', width: '100%'}}
+                            //onLoad={() => {}}
+                            //ref={this.iframeRef}
+                            src="/editor.html"
+                            title="Collaborative Editor"
+                        />
+                        <iframe
+                            id="sketchFrame"
+                            style={{height: '500px', width: '500px'}}
+                            //onLoad={() => {}}
+                            //ref={this.iframeRef}
+                            src="/sketch.html"
+                            title="p5 Render"
+                        />
+                    </div>
                 </div>
             </section>
             
