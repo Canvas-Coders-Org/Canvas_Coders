@@ -1,0 +1,58 @@
+<!DOCTYPE html><html lang="en"><head>
+    <script src="/p5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="sketch-style.css">
+    <meta charset="utf-8">
+
+  </head>
+  <body>
+    <script type="text/javascript">
+        let renderFunc;
+        window.parent.addEventListener("message", function(msg) {
+            try {
+                console.log("Message received", msg);
+                const post = JSON.parse(msg.data);
+                if (post.type === 'sketch') {
+                    console.log("Received message", post.content);
+                    try {
+                        eval(post.content);                    
+                        console.log("Done eval'ing code");
+                    } catch(e) {
+                        console.error('Error while eval received string.', e.toString());
+                    }
+                    // const renderTag = document.getElementById("renderScript");
+                    // renderTag.innerHTML = post.content;
+                }
+            } catch(e) {
+            }
+        })
+    </script>
+
+<main>
+</main>
+<header>      
+    
+  W O V E
+    <button id = "menuButton" class="mButton" style=" text-align: center;  position:relative;letter-spacing: 5px; font-size: 15px; " onclick="gotoweb()">
+      patternseeing</button>
+ </header>
+<div id = "sketchPad"><div>
+
+    <div id ="controls">
+
+    <div id="textBox"></div>
+
+   <div id ="controlBlock">   
+  <div id ="controls1">    </div>
+ </div>
+
+ <div id="social"></div>
+
+</div>
+<div id="sButton" style="display:block;position:absolute;right:10%;bottom:10%;backgrond-color:red"></div>
+<script src="/uiElements.js"></script>
+    <script id="renderScript" type="text/javascript" src="/sketch.js">
+        
+    </script>
+    
+
+</body></html>

@@ -5,6 +5,13 @@
 /* Set height of body and html to full height */
 html, body {
   height: 100%;
+  background-color: #242425;
+  font-family: 'Roboto Mono';
+}
+
+#editorContainer {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Fix position of header and footer */
@@ -17,6 +24,7 @@ footer {
 }
 
 header {
+  background-color: #DBB799;
   top: 0;
 }
 
@@ -24,10 +32,13 @@ footer {
   bottom: 0;
 }
 
+h2, h3 {
+  color: #DBB799;
+}
+
 /* Set background color of body */
 body {
   padding-top: 80px;
-  background-color: #f3f3f3;
 }
 
 /* Center main content */
@@ -55,9 +66,12 @@ main button {
   margin-right: auto;
 }
 
+.hero-blur {
+  background-color: rgb(36, 36, 36, 0.5);
+}
 /* Style footer */
 footer {
-  background-color: #fff;
+  background-color: #DBB799;
   box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1);
 }
 

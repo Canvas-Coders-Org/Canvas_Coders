@@ -2,8 +2,20 @@
     <script src="https://invisible-college.github.io/universal-sync/diffsync.js"></script>
     <!--<script src="https://braid.news/diffsync.js"></script>-->
     <script src="https://invisible.college/js/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.js"></script>
     <link rel="stylesheet" href="https://invisible.college/css/github-markdown.css">
-    <style>note {position: absolute; left: 900; width: 400; background-color: #F8F3B7; padding: 10; box-shadow: -2px 2px 2px #ccc; border-radius: 2; text-align: left;}</style>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet" />
+    <style>
+        textarea {
+            font-family: "Roboto Sans", monospace, sans-serif;
+            font-size: 1.4rem;
+        }
+        canvas {
+            display: block;
+        }
+       note {position: absolute; left: 900; width: 400; background-color: #F8F3B7; padding: 10; box-shadow: -2px 2px 2px #ccc; border-radius: 2; text-align: left;}
+    </style>
     <script>
     
     document.title = window.location.pathname.substr(1)
@@ -19,13 +31,7 @@
     output.style.maxWidth = '900px'
     document.body.append(output)
     
-    var bottom_pad = document.createElement('div')
-    bottom_pad.style.height = '50vh'
-    bottom_pad.style.display = 'none'
-    document.body.append(bottom_pad)
-    
     var t = document.createElement('textarea')
-    t.style.position = 'fixed'
     t.style.bottom = '0px'
     t.style.right = '0px'
     t.style.width = '100%'
@@ -68,7 +74,7 @@
     function update_markdown() {
         timer = null
         var source = showing_diff ? html_diffed(last_version||'', t.value) : t.value
-        output.innerHTML = marked(source, {sanitize: !is_safe})
+        //output.innerHTML = marked(source, {sanitize: !is_safe})
         document.body.className = 'nopad'
     }
     update_markdown()
@@ -106,7 +112,6 @@
     var vert = true, editing = true
     function render () {
         t.style.display = editing ? null : 'none'
-        bottom_pad.style.display = (editing && vert) ? null : 'none'
     
         if (vert) {
             t.style.width = '100%'
@@ -290,6 +295,23 @@
     }
     for (i=0; i<50; i++)
         setTimeout(scroll, i / 5.0 * 1000)
+
+    const submitButton = document.createElement('button');
+    submitButton.setAttribute("id", "submitSketch");
+    submitButton.style.height = '20px';
+    submitButton.style.width = '100px';
+    document.body.append(submitButton);
+
+    submitButton.addEventListener("click", (evt) => {
+        evt.preventDefault();
+        try {
+            window.parent.postMessage(JSON.stringify({type: "sketch", content: last_version}), "*");
+            //eval(last_version);
+            console.log("Posted p5js code to the render frame");
+        } catch(e) {
+            console.error(e.toString());
+        }
+    });
     </script>
     </body>
     
