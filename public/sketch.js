@@ -1,99 +1,158 @@
-var points = [];
-var mult = 0.005;
-var allimages=[];
-var pic;
-var pos = 0;
-var bg;
-var imgur;
+/////////// W O V E /////////////////
+///// patternseeing | 2022  /////////
 
 
-function preload(){
-  allimages=['images/1.png','images/2.png','images/3.png','images/4.png','images/5.png','images/6.png','images/7.png','images/8.png','images/9.png','images/10.png'];
-  // var pos = floor(random(allimages.length));
+let content = "";
 
-  pic = loadImage(allimages[pos]);
-  bg = loadImage('images/bgg.png');
+let pg;
+let grid =22;
 
-}
+let pos=[];
+let dotBool = true;
+
+let colorBool = false;
+let cnv;
+let gridDiv;
+let strokeCol;
+let painter;
 
 function setup() {
-  var ww= windowWidth;
-  createCanvas(windowWidth,windowHeight);
-  background(255,100);
-  imageMode(CORNER);
-  image(bg,0,0);
-  textSize(16);
+  cnv=createCanvas(windowWidth,windowHeight);
+  cnv.parent('sketchPad');
+  pg = createGraphics(width,height);
 
-  // image(pic,width/2,height/2);
-  // bg.resize(500, 500);
-  angleMode(DEGREES);
-  noiseDetail(10);
-  inti();
-  textFont('Helvetica');
-  push();
-  textSize(20);
-  textStyle(BOLD);
-  text("Marvel's noise flow field", 800, height/2-40);
-  pop();
-  text("It'll take some time to load the character, please wait and enjoy the transition\nClick anywhere to switch to the next character\nOnly click once at a time", 800, height/2-20, 410);
+  uiElements();
 
-  imgur = createA('https://imgur.com/gallery/z5xzmcA', 'See all characters here', "_blank");
-  imgur.position(800, height/2+60);
+  connect();
+
 }
 
-function inti(){
+function connect(){
 
-  image(bg,0,0);
-  fill(100);
-  push();
-  textSize(20);
-  textStyle(BOLD);
-  text("Marvel's noise flow field", 800, height/2-40);
-  pop();
-  text("It'll take some time to load the character, please wait and enjoy the transition\nClick anywhere to switch to the next character\nOnly click once at a time", 800, height/2-20, 410);
+  background(colorPicker2.color());
+  content = textField.value();
+  painter = selector.value();
 
+  pos=[];
+  grid = gridSlider.value();
+  document.getElementById('gridValue').innerHTML = grid;
+  document.getElementById('scaleValue').innerHTML = textSlider.value();
 
-  var rowPoints = 320;
-  var distPoints = width/rowPoints;
-  for(var x=0; x<width;x+=distPoints){
-    for(var y=0; y<height;y+=distPoints){
-        var p = createVector(x+random(10,30),y+random(5,30));
-        points.push(p);
-        }
+  document.getElementById('distValue').innerHTML = distSlider.value();
+  document.getElementById('strokeValue').innerHTML = strokeSlider.value();
+  if(painter==="Random"){
+    document.getElementById('colorID').style.display = 'none';
+    document.getElementById('colorID1').style.display = 'none';
+      }else if (painter==="Solid"){
+        document.getElementById('colorID').style.display = 'block';
+    
+      }
+  
+  pg.background(0);
+  pg.textSize(textSlider.value());
+  pg.fill(255);
+  pg.noStroke();
+  pg.textAlign(CENTER);
+  pg.text(content,pg.width/2,pg.height/2);
+  
+  
+  for(var i=0;i<pg.width;i+=grid){
+   for(var j=0;j<pg.height;j+=grid){
+    
+         var col = pg.get(i,j);
+    
+         if(brightness(col)>80){
+       pos.push(createVector(i,j));           
+        }     
     
   }
-
-}
-
-function mousePressed(){
-  pos = pos + 1;
-  if (pos >= allimages.length) {
-    pos = 0;
-}
+  }
   
-  pic = loadImage(allimages[pos]);
-  background(255);
-  points = [];
-  inti();
+  // pg.pop();
+ 
+  
+    for(let i=0;i<pos.length;i++){
+          for(let j=0;j<pos.length;j++){
 
+            
+               stroke(255);
+           strokeWeight(4);   
+  //  noStroke();
+  //  fill(255);       
+          if(dotBool){
+             
+         //   ellipse(pos[i].x,pos[i].y,strokeSlider.value()*.15,strokeSlider.value()*.15);    
+     point(pos[i].x,pos[i].y);
+                 }
+            
+let d = dist(pos[i].x,pos[i].y,pos[j].x,pos[j].y);
+            
+            
+      if(d<distSlider.value()){  
+        
+        if(painter==="Random"){
+          strokeCol= color(random(255),random(255),random(255),random(255));
+           }else   if(painter==="Solid"){
+             
+            strokeCol = colorPicker.color();
+           }
+console.log(strokeCol);
+           stroke(strokeCol);
+           strokeWeight(strokeSlider.value()*.25);  
+
+
+      // line(pos[i].x,pos[i].y,pos[j].x,pos[j].y); 
+        
+   noFill();     
+        
+        bezier(pos[i].x,pos[i].y,(pos[i].x+pos[j].x)/2,(pos[i].y+pos[j].y)/2,(pos[i].x+pos[j].x)/2,(pos[i].y+pos[j].y)/2,pos[j].x,pos[j].y); 
+       
+  //      arc((pos[i].x+pos[j].x)/2,(pos[i].y+pos[j].y)/2,d,d,-PI/2,PI/2);
+               
+          }
+   
+    }
+  }
+  
+  
 }
 
-function draw() {
 
-  // background(255,10);
-   for(var i=0; i<points.length;i++){
-     
-     var angle = map(noise(points[i].x*mult,points[i].y*mult), 0,1,0,720);
-     points[i].add(createVector(cos(angle),sin(angle)));
-
-     circle(points[i].x,points[i].y,2);
-     let coolor = pic.get(points[i].x,points[i].y);
-     fill(coolor);
-     noStroke();
-   }
-
-  console.log(pos);
-  // console.log(allimages.length);
-
+function dotBoolCheck(){
+  
+  dotBool =!dotBool;
+  connect();
 }
 
+function colorBoolCheck(){
+  
+  colorBool =!colorBool;
+
+  
+  connect();
+}
+
+
+
+function saveSketch() {
+  let name = "W O V E _"+hour()+minute()+second()+".png";
+  save(name);
+  
+}
+
+function windowResized() {
+  
+
+   cnv= resizeCanvas(windowWidth, windowHeight);
+   pg= null;
+   pg = createGraphics(width,height);
+
+   connect();
+  }
+
+  function gotoweb() {
+    window.open('https://patternseeing.wordpress.com/');
+  }
+  
+  
+  

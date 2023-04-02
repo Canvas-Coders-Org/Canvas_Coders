@@ -74,7 +74,7 @@
     function update_markdown() {
         timer = null
         var source = showing_diff ? html_diffed(last_version||'', t.value) : t.value
-        output.innerHTML = marked(source, {sanitize: !is_safe})
+        //output.innerHTML = marked(source, {sanitize: !is_safe})
         document.body.className = 'nopad'
     }
     update_markdown()
@@ -305,12 +305,9 @@
     submitButton.addEventListener("click", (evt) => {
         evt.preventDefault();
         try {
-            const sketchScript = document.createElement('script');
-            sketchScript.type = "text/javascript";
-            sketchScript.innerHTML = last_version;
-            document.body.append(sketchScript);
+            window.parent.postMessage(JSON.stringify({type: "sketch", content: last_version}), "*");
             //eval(last_version);
-            console.log("Evaluated text.");
+            console.log("Posted p5js code to the render frame");
         } catch(e) {
             console.error(e.toString());
         }
