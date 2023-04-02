@@ -30,3 +30,11 @@ BlockFuse leveraged the following technologies:
 * [Video Demo]()
 * [Pitch Deck]()
 * [Devpost](https://devpost.com/software/canvas-coders-unleash-your-creativity-through-art-and-code)
+
+
+# NEXT STEPS & UPDATES
+Continue to build with Owl Protocol and Explore Integrations with Other Web 3 Tools, Such as Lit Protcol for Gated Content Based On NFTs Held By Users
+
+
+
+
