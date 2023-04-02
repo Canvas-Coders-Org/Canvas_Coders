@@ -24,7 +24,8 @@ BlockFuse leveraged the following technologies:
 * react
 * shell
 * typescript
-* vercel
+* vercel for CI/CD
+* checkly for QA
 
 ## SUBMISSION DETAILS
 * [Video Demo]()
