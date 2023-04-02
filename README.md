@@ -69,7 +69,9 @@ BlockFuse leveraged the following technologies:
 
 
 ## NEXT STEPS & UPDATES
-Continue to build with Owl Protocol and Explore Integrations with Other Web 3 Tools, Such as Lit Protcol for Gated Content Based On NFTs Held By Users
+Canvas Coders plans to continue expanding its offerings and providing a personalized learning experience that helps early learners discover and adopt the tools to become lifelong learners of ART + STEAM. In the future, we hope to partner with schools and community centers to provide access to our platform to those who may not have the means to afford traditional art and coding education. We also plan to integrate emerging technologies such as virtual and augmented reality to provide an even more immersive learning experience.
+
+On the technical side, we plan to continue to build with Owl Protocol and explore integrations with other Web 3 Tools, such as Lit Protocol for gated content based on NFTs held by users.
 
 
 
